@@ -5,18 +5,20 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
+  The game loaded a basic Streamlit interface with a text box for entering guesses, a submit button, and a score display. However, the hint logic was inverted, range validation was missing, and the game reset button did not reset the state properly.
+
 - List at least two concrete bugs you noticed at the start  
-  (for example: "the hints were backwards").
+  1. The high/low hint feedback was inverted (guessing higher than the secret number returned "Too Low").
+  2. The "Start New Game" button does not reset or start a new game state when clicked.
 
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
-|-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| Guess `150` (Secret is `50`)| Show error that guess must be between 1 and 100| Accepts input and tells user to "go higher"| None|
+| Guess `70` (Secret is `50`)| Show hint "go lower"| Shows hint "go higher"|None |
+|Guess '30' (Secret is '50') | Shows hint "go higher"|Shows hint "go lower" | None|
 
 ---
 
