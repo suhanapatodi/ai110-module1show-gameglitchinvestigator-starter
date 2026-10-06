@@ -3,6 +3,16 @@
 > **Stretch features only.** Only fill in the sections that apply to stretch features you attempted. If you did not attempt a stretch feature, leave its section blank or delete it. This file is not required for the core project.
 
 ---
+## Challenge 1: Advanced Edge-Case Testing
+
+### Prompts Used
+- "Identify three potential edge-case inputs for input parsing/game logic (like empty strings, out-of-bounds integers, and float strings) and write pytest cases for parse_guess."
+
+### Edge Cases Chosen & Rationales
+1. **Empty / Non-numeric Strings (`""`, `"abc"`):** Chosen because raw user text inputs from UI text fields can often be empty or contain non-digit characters, which can cause unhandled ValueError crashes if not parsed safely.
+2. **Out-of-Bounds Integers (`0`, `150`):** Chosen because guesses outside the designated difficulty range (e.g. 1 to 100) waste player attempts and need clean error validation messages.
+3. **Decimal Strings (`"50.0"`):** Chosen because users or Streamlit numeric inputs might pass string floats, which `int()` fails on directly unless converted through `float()` first.
+
 
 ## Agent Workflow (SF8)
 
